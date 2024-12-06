@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: -webkit-fill-available;
+
+  mat-sidenav-container{
+    width: -webkit-fill-available;
+  }
+
+  .content{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
+}

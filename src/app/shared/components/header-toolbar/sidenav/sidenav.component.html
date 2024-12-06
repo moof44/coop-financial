@@ -1,0 +1,15 @@
+<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav #snav mode="over" fixedTopGap="56">
+    <mat-nav-list>
+      @for (nav of fillerNav2; track nav) {
+      <a mat-list-item routerLink="{{ nav.link }}" (click)="snav.close()">
+        <mat-icon>{{ nav.icon }}</mat-icon> {{ nav.label }}
+      </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
