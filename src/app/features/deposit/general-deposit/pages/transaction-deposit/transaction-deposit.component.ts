@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { CurrencyPipe } from '../../../../../shared/pipe/currency.pipe';
 
 @Component({
-  selector: 'app-list-savings',
+  selector: 'app-transaction-deposit',
   standalone: true,
   imports: [
     MatCardModule, 
@@ -22,12 +22,12 @@ import { CurrencyPipe } from '../../../../../shared/pipe/currency.pipe';
     CommonModule,
     CurrencyPipe,
   ],
-  templateUrl: './list-savings.component.html',
-  styleUrl: './list-savings.component.scss',
+  templateUrl: './transaction-deposit.component.html',
+  styleUrl: './transaction-deposit.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListSavingsComponent implements OnInit {
-
+export class TransactionDepositComponent implements OnInit {
+  
   displayedColumns: string[] = ['date', 'orNumber', 'amount', 'interest','balance'];
   dataSource = depositTransactions;
 

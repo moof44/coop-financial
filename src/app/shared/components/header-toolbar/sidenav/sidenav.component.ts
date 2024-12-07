@@ -50,6 +50,11 @@ export class SidenavComponent implements OnInit, OnDestroy{
       link: '/deposit',
       icon: 'home' // Add icon property
     },
+    {
+      label: 'Loan',
+      link: '/loan',
+      icon: 'home' // Add icon property
+    },
   ]
 
   constructor(){

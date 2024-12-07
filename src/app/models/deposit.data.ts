@@ -1,19 +1,59 @@
-import { Deposit, DepositTransaction } from './deposit.model';
+import {
+  Deposit,
+  DepositTransaction,
+  DepositType,
+  DepositTransactionType,
+} from './deposit.model';
 
 export const deposit: Deposit = {
   id: 'dep_001',
   memberId: 'mbr_123',
   memberName: 'John Doe',
+  depositType: DepositType.savings,
+  dateStarted: new Date('2024-10-01'),
   balance: 12500,
   interestEarned: 500,
   lastTransaction: new Date('2024-12-05'),
 };
 
+export const deposits: Deposit[] = [
+  {
+    id: 'dep_001',
+    memberId: 'mbr_123',
+    memberName: 'John Doe',
+    depositType: DepositType.savings,
+    dateStarted: new Date('2024-10-01'),
+    balance: 12500,
+    interestEarned: 500,
+    lastTransaction: new Date('2024-12-05'),
+  },
+  {
+    id: 'dep_002',
+    memberId: 'mbr_123',
+    memberName: 'John Doe',
+    depositType: DepositType.timeDeposit,
+    dateStarted: new Date('2024-10-02'),
+    balance: 10000,
+    interestEarned: 0,
+    lastTransaction: new Date('2024-12-05'),
+  },
+  {
+    id: 'dep_003',
+    memberId: 'mbr_123',
+    memberName: 'John Doe',
+    depositType: DepositType.emergencyFund,
+    dateStarted: new Date('2024-10-03'),
+    balance: 20000,
+    interestEarned: 0,
+    lastTransaction: new Date('2024-12-05'),
+  },
+];
+
 export const depositTransactions: DepositTransaction[] = [
   {
     id: 'dt_001',
     depositId: 'dep_001',
-    transactionType: 'deposit',
+    transactionType: DepositTransactionType.deposit,
     date: new Date('2024-10-01'),
     time: '10:00 AM',
     orNumber: 'OR001',
@@ -22,11 +62,12 @@ export const depositTransactions: DepositTransaction[] = [
     interest: 0,
     balance: 10000,
     userId: 'user_001',
+    userName: 'Joan',
   },
   {
     id: 'dt_002',
     depositId: 'dep_001',
-    transactionType: 'deposit',
+    transactionType: DepositTransactionType.deposit,
     date: new Date('2024-10-15'),
     time: '02:30 PM',
     orNumber: 'OR002',
@@ -35,11 +76,12 @@ export const depositTransactions: DepositTransaction[] = [
     interest: 0,
     balance: 12000,
     userId: 'user_001',
+    userName: 'Joan',
   },
   {
     id: 'dt_003',
     depositId: 'dep_001',
-    transactionType: 'interest',
+    transactionType: DepositTransactionType.interest,
     date: new Date('2024-11-01'),
     time: '12:00 AM',
     orNumber: '',
@@ -48,11 +90,12 @@ export const depositTransactions: DepositTransaction[] = [
     interest: 300,
     balance: 12300,
     userId: 'system',
+    userName: 'Joan',
   },
   {
     id: 'dt_004',
     depositId: 'dep_001',
-    transactionType: 'withdraw',
+    transactionType: DepositTransactionType.withdraw,
     date: new Date('2024-11-15'),
     time: '11:15 AM',
     orNumber: 'OR003',
@@ -61,11 +104,12 @@ export const depositTransactions: DepositTransaction[] = [
     interest: 0,
     balance: 11300,
     userId: 'user_001',
+    userName: 'Joan',
   },
   {
     id: 'dt_005',
     depositId: 'dep_001',
-    transactionType: 'deposit',
+    transactionType: DepositTransactionType.deposit,
     date: new Date('2024-12-05'),
     time: '09:45 AM',
     orNumber: 'OR004',
@@ -74,5 +118,6 @@ export const depositTransactions: DepositTransaction[] = [
     interest: 200,
     balance: 12500,
     userId: 'user_001',
+    userName: 'Joan',
   },
 ];
