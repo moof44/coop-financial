@@ -1,0 +1,68 @@
+import { CashDisbursement, CashDisbursementType } from "./cash-dibursement.model";
+import { CashAllocation } from "./global.model";
+
+export const CashDisbursements: CashDisbursement[] = [
+    {
+      id: 'cd_001',
+      date: new Date('2024-12-04'),
+      time: '10:00 AM',
+      paidToId: 'mbr_456',
+      paidToName: 'Jane Smith',
+      cashAllocation: CashAllocation.onHand,
+      disbursementType: CashDisbursementType.savings,
+      amount: 1000,
+      remarks: 'Savings withdrawal',
+      userId: 'user_002',
+      userName: 'Cashier',
+    },
+    {
+      id: 'cd_002',
+      date: new Date('2024-12-04'),
+      time: '11:30 AM',
+      paidToName: 'Electric Company', // No paidToId for utilities
+      cashAllocation: CashAllocation.inBank,
+      disbursementType: CashDisbursementType.utility,
+      amount: 5000,
+      remarks: 'Electricity bill payment',
+      userId: 'user_001',
+      userName: 'Admin User',
+    },
+    {
+      id: 'cd_003',
+      date: new Date('2024-12-04'),
+      time: '01:00 PM',
+      paidToId: 'mbr_789',
+      paidToName: 'Alice Johnson',
+      cashAllocation: CashAllocation.onHand,
+      disbursementType: CashDisbursementType.shareCapital,
+      amount: 5000,
+      remarks: 'Share capital withdrawal',
+      userId: 'user_002',
+      userName: 'Cashier',
+    },
+    {
+      id: 'cd_004',
+      date: new Date('2024-12-04'),
+      time: '03:45 PM',
+      paidToName: 'Office Supplies Store', // No paidToId for general expenses
+      cashAllocation: CashAllocation.onHand,
+      disbursementType: CashDisbursementType.others,
+      amount: 2500,
+      remarks: 'Purchase of office supplies',
+      userId: 'user_001',
+      userName: 'Admin User',
+    },
+    {
+      id: 'cd_005',
+      date: new Date('2024-12-05'),
+      time: '09:00 AM',
+      paidToId: 'mbr_101', 
+      paidToName: 'Bob Williams',
+      cashAllocation: CashAllocation.inBank,
+      disbursementType: CashDisbursementType.deposit,
+      amount: 10000,
+      remarks: 'Deposit withdrawal',
+      userId: 'user_002',
+      userName: 'Cashier',
+    },
+  ];

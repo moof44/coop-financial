@@ -6,8 +6,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
-import { CurrencyPipe } from '../../../../shared/pipe/currency.pipe';
-import { DepositType } from '../../../../models/deposit.model';
 import { loans } from '../../../../models/loan.data';
 
 
@@ -22,7 +20,6 @@ import { loans } from '../../../../models/loan.data';
     MatFormFieldModule,
     RouterModule,
     CommonModule,
-    CurrencyPipe,
   ],
   templateUrl: './list-loan.component.html',
   styleUrl: './list-loan.component.scss',

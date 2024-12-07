@@ -1,1 +1,54 @@
-<p>list-collection works!</p>,
+<mat-card appearance="outlined">
+  <mat-card-header class="page-card-header">
+    <mat-card-title>Cash Collection</mat-card-title>
+    <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.date | date : "MMM dd, yyyy"}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="receivedFromName">
+        <th mat-header-cell *matHeaderCellDef>Received From</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.receivedFromName }}
+        </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="cashAllocation">
+        <th mat-header-cell *matHeaderCellDef>Allocation</th>
+        <td mat-cell *matCellDef="let element">{{ element.cashAllocation }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="collectionType">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let element">{{ element.collectionType }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.amount | currency:'PHP'  }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions class="right">
+    <button mat-button (click)="navigateToAdd()">Add</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <a routerLink="add">Add Member</a> <br />
+  <a routerLink="update/1">Update Member</a>
+   -->
