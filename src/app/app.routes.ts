@@ -106,5 +106,57 @@ export const routes: Routes = [
         ),
       }
     ]
-  }
+  },
+  {
+    path: 'disbursement',
+    loadComponent: ()=> import('./features/cash-disbursement/cash-disbursement.component').then(
+      (m) => m.CashDisbursementComponent
+    ),
+    children: [
+      {
+        path: '',
+        loadComponent: ()=> import('./features/cash-disbursement/pages/list-dibursement/list-dibursement.component').then(
+          (m) => m.ListDibursementComponent
+        ),
+      },
+      {
+        path: 'form/:id',
+        loadComponent: ()=> import('./features/cash-disbursement/pages/form-disbursement/form-disbursement.component').then(
+          (m) => m.FormDisbursementComponent
+        ),
+      },
+      {
+        path: 'form',
+        loadComponent: ()=> import('./features/cash-disbursement/pages/form-disbursement/form-disbursement.component').then(
+          (m) => m.FormDisbursementComponent
+        ),
+      },
+    ]
+  },
+  {
+    path: 'collection',
+    loadComponent: ()=> import('./features/cash-collection/cash-collection.component').then(
+      (m) => m.CashCollectionComponent
+    ),
+    children: [
+      {
+        path: '',
+        loadComponent: ()=> import('./features/cash-collection/pages/list-collection/list-collection.component').then(
+          (m) => m.ListCollectionComponent
+        ),
+      },
+      {
+        path: 'form/:id',
+        loadComponent: ()=> import('./features/cash-collection/pages/form-collection/form-collection.component').then(
+          (m) => m.FormCollectionComponent
+        ),
+      },
+      {
+        path: 'form',
+        loadComponent: ()=> import('./features/cash-collection/pages/form-collection/form-collection.component').then(
+          (m) => m.FormCollectionComponent
+        ),
+      },
+    ]
+  },
 ];
