@@ -43,7 +43,7 @@
           <ng-container matColumnDef="balance">
             <th mat-header-cell *matHeaderCellDef>Balance</th>
             <td mat-cell *matCellDef="let element">
-              {{ element.balance | currency }}
+              {{ element.balance | currency:'PHP' }}
             </td>
           </ng-container>
   

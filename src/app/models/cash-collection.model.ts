@@ -8,6 +8,7 @@ export interface CashCollection {
     receivedFromName: string,
     cashAllocation: CashAllocation,
     collectionType: CollectionType,
+    amount: number,
     remarks?:string,
     userId?: string,
     userName?: string,

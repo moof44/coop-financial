@@ -8,6 +8,7 @@ export interface CashDisbursement{
     paidToName: string,
     cashAllocation: CashAllocation,
     disbursementType: CashDisbursementType
+    amount: number,
     remarks?: string, // may include breakdown for some disbursement
     userId?: string,
     userName?: string,

@@ -8,7 +8,6 @@ import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
 import { deposits } from '../../../../../models/deposit.data';
 import { DepositType } from '../../../../../models/deposit.model';
-import { CurrencyPipe } from '../../../../../shared/pipe/currency.pipe';
 
 @Component({
   selector: 'app-list-deposit',
@@ -21,7 +20,6 @@ import { CurrencyPipe } from '../../../../../shared/pipe/currency.pipe';
     MatFormFieldModule,
     RouterModule,
     CommonModule,
-    CurrencyPipe,
   ],
   templateUrl: './list-deposit.component.html',
   styleUrl: './list-deposit.component.scss',
