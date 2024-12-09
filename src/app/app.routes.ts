@@ -134,7 +134,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'collection',
+    path: 'cash-collection',
     loadComponent: ()=> import('./features/cash-collection/cash-collection.component').then(
       (m) => m.CashCollectionComponent
     ),
@@ -154,6 +154,32 @@ export const routes: Routes = [
       {
         path: 'form',
         loadComponent: ()=> import('./features/cash-collection/pages/form-collection/form-collection.component').then(
+          (m) => m.FormCollectionComponent
+        ),
+      },
+    ]
+  },
+  {
+    path: 'collection',
+    loadComponent: ()=> import('./features/collection/collection.component').then(
+      (m) => m.CollectionComponent
+    ),
+    children: [
+      {
+        path: '',
+        loadComponent: ()=> import('./features/collection/pages/list-collection/list-collection.component').then(
+          (m) => m.ListCollectionComponent
+        ),
+      },
+      {
+        path: 'form/:id',
+        loadComponent: ()=> import('./features/collection/pages/form-collection/form-collection.component').then(
+          (m) => m.FormCollectionComponent
+        ),
+      },
+      {
+        path: 'form',
+        loadComponent: ()=> import('./features/collection/pages/form-collection/form-collection.component').then(
           (m) => m.FormCollectionComponent
         ),
       },
