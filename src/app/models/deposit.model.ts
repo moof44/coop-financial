@@ -36,8 +36,8 @@ export enum DepositType {
     kiddieSavers = 'Kiddie Savers',
     emergencyFund = 'Emergency Fund',
     shares = 'Shares Deposit',
-    others = 'Others',
     mutualBenefits = 'Mutual Benefits Fund / Damayan',
+    others = 'Others',
 }
 
 export enum DepositTransactionType {
