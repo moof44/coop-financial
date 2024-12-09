@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, type OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, type OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
@@ -22,11 +22,29 @@ export class ListMemberComponent implements OnInit {
   #router = inject(Router);
   displayedColumns: string[] = ['id', 'name', 'contactNo', 'isActive'];
   dataSource = transformedMembers;
+  mode = signal<'default' | 'for approval'>('default');
 
   ngOnInit(): void { }
 
   navigateToAdd(){
-    this.#router.navigateByUrl('/members/add');
+    if(this.mode() === 'default') this.#router.navigateByUrl('/members/add');
+    else this.#router.navigateByUrl('/members/pre-registration');
+  }
+
+  navigateToUpdate(id:string){
+    this.#router.navigateByUrl('/members/update/'+id);
+  }
+
+  navigateToPreRegistration(){
+    this.#router.navigateByUrl('/members/pre-registration');
+  }
+
+  changeToForApproval(){
+    this.mode.set('for approval');
+  }
+
+  changeToDefault(){
+    this.mode.set('default');
   }
 
 }

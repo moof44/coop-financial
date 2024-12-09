@@ -1,7 +1,14 @@
 <mat-card appearance="outlined">
   <mat-card-header class="page-card-header">
-    <mat-card-title>Member's List</mat-card-title>
+    <mat-card-title>
+      @if(mode() === 'default'){ Member's List }@else{ For Approval }
+    </mat-card-title>
     <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+    @if(mode() === 'default'){
+      <button mat-button (click)="navigateToPreRegistration()">
+        Pre Registration
+      </button>
+    }
   </mat-card-header>
   <mat-card-content>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -33,10 +40,23 @@
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="navigateToUpdate(row.id)"
+      ></tr>
     </table>
   </mat-card-content>
-  <mat-card-actions class="right">
+  <mat-card-actions class="space-between">
+    @if(mode() === 'default'){
+    <button mat-button (click)="changeToForApproval()" color="warn">
+      For Approval
+    </button>
+    }@else{
+    <button mat-button (click)="changeToDefault()" color="warn">
+      Member's List
+    </button>
+    }
     <button mat-button (click)="navigateToAdd()">Add</button>
   </mat-card-actions>
 </mat-card>
