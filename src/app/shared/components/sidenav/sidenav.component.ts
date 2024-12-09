@@ -4,10 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
-import { NavigationMenu } from '../../../../models/app.model';
 import { RouterModule } from '@angular/router';
-import { AppStore } from '../../../../stores/app.store';
 import { Subscription } from 'rxjs';
+import { AppStore } from '../../../stores/app.store';
+import { NavigationMenu } from '../../../models/app.model';
 
 @Component({
   selector: 'sidenav',

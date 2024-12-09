@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderToolbarComponent } from './shared/components/header-toolbar/header-toolbar.component';
-import { SidenavComponent } from './shared/components/header-toolbar/sidenav/sidenav.component';
 import { AppStore } from './stores/app.store';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',

@@ -7,6 +7,12 @@
     <div class="container">
       <div class="row">
         <mat-form-field>
+          <mat-label>Search Account no. / Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
           <mat-label>Account No.</mat-label>
           <input matInput />
         </mat-form-field>
@@ -79,7 +85,7 @@
     </div>
   </mat-card-content>
   <mat-card-actions class="center">
-    <button mat-flat-button color="warn">Withdraw</button>
-    <button mat-flat-button>Deposit</button>
+    <button mat-flat-button color="warn" (click)="openWithdraw()">Withdraw</button>
+    <button mat-flat-button (click)="openDeposit()">Deposit</button>
   </mat-card-actions>
 </mat-card>
