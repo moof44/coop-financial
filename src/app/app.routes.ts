@@ -39,6 +39,14 @@ export const routes: Routes = [
         redirectTo: '',
         pathMatch: 'full',
       },
+      {
+        path: 'pre-registration',
+        loadComponent: () =>
+          import(
+            './features/members/pages/pre-registration-member/pre-registration-member.component'
+          ).then((m) => m.PreRegistrationMemberComponent),
+        
+      }
     ],
   },
   {
