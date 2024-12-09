@@ -8,6 +8,8 @@ import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
 import { deposits } from '../../../../../models/deposit.data';
 import { DepositType } from '../../../../../models/deposit.model';
+import { MatDialog } from '@angular/material/dialog';
+import { EnrollDepositDialogComponent } from '../../../../../shared/dialog/enroll-deposit.dialog/enroll-deposit.dialog.component';
 
 @Component({
   selector: 'app-list-deposit',
@@ -27,6 +29,7 @@ import { DepositType } from '../../../../../models/deposit.model';
 })
 export class ListDepositComponent implements OnInit {
   #router = inject(Router)
+  readonly dialog = inject(MatDialog);
 
   displayedColumns: string[] = [
     'depositType',
@@ -39,5 +42,13 @@ export class ListDepositComponent implements OnInit {
 
   transactionDetails(id:string){
     this.#router.navigateByUrl(`/deposit/transactions/${id}`)
+  }
+
+  enrollDeposit(){
+    const dialogRef = this.dialog.open(EnrollDepositDialogComponent);
+    dialogRef.afterClosed().subscribe(res=>{
+      console.log(`Dialog result: ${res}`)
+    })
+    
   }
 }
