@@ -1,0 +1,41 @@
+<mat-card appearance="outlined">
+  <mat-card-header class="page-card-header">
+    <mat-card-title>Loan Type Settings</mat-card-title>
+    <!-- <mat-card-subtitle>Herding group</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Loan Type</mat-label>
+        <mat-select [value]="selected">
+          @for (type of loanTypeOptions; track $index) {
+          <mat-option [value]="type.value">{{ type.label }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-slide-toggle [checked]="false">Processing Fee</mat-slide-toggle>
+        <mat-slide-toggle [checked]="true">Service Fee</mat-slide-toggle>
+    </div>
+    <div class="row">
+        <mat-slide-toggle [checked]="true">Mutual Benefit Fund</mat-slide-toggle>
+        <mat-slide-toggle [checked]="true">Notarial Fee</mat-slide-toggle>
+    </div>
+    <div class="row">
+        <mat-slide-toggle [checked]="true">Share Capital Contribution</mat-slide-toggle>
+        <mat-slide-toggle [checked]="false">Membership Fee/I.D.</mat-slide-toggle>
+    </div>
+    <div class="row">
+        <mat-slide-toggle [checked]="true">LGF</mat-slide-toggle>
+        <mat-slide-toggle [checked]="true">Raffle Ticket</mat-slide-toggle>
+    </div>
+    <div class="row">
+        <mat-slide-toggle [checked]="false">RF/CBU</mat-slide-toggle>
+        <mat-slide-toggle [checked]="false">Others</mat-slide-toggle>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="right">
+    <button mat-button>Save</button>
+  </mat-card-actions>
+</mat-card>

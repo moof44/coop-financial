@@ -8,7 +8,7 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-form-member',
+  selector: 'app-enroll-loan',
   standalone: true,
   imports: [
     MatCardModule, 
@@ -19,11 +19,12 @@ import { MatIconModule } from '@angular/material/icon';
     MaterialFileInputModule,
     MatIconModule,
   ],
-  templateUrl: './form-member.component.html',
-  styleUrl: './form-member.component.scss',
+  templateUrl: './enroll-loan.component.html',
+  styleUrl: './enroll-loan.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormMemberComponent implements OnInit {
+export class EnrollLoanComponent implements OnInit {
+
   #router = inject(Router);
 
   ngOnInit(): void { }

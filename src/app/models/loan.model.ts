@@ -1,3 +1,9 @@
+export interface FeesCharges{
+    feesType: FeesChargesType,
+    amount: number,
+}
+
+
 export interface Loan{
     id: string,
     memberId: string,
@@ -10,6 +16,21 @@ export interface Loan{
     dueDate: string | Date,
     coMakerId: string,
     coMakerName: string,
+    feesChargers?: FeesCharges[],
+}
+
+
+export enum FeesChargesType{
+    processing = 'Processing Fee',
+    service = 'Service Fee',
+    mutualBenefit = 'Mutual Benefit Funds',
+    notarial = 'Notarial Fee',
+    shareCapital = 'Share Capital',
+    membership = 'Membership Fee / I.D.',
+    lgf = 'LGF',
+    raffle = 'Raffle Ticket',
+    rfCBU = 'RF/CBU',
+    others = 'Others',
 }
 
 export interface LoanTransaction {

@@ -1,6 +1,51 @@
 <h2 mat-dialog-title>Enroll Deposit</h2>
 <mat-dialog-content class="mat-typography">
-    Deposit entries here
+  <div class="row">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Deposit Type</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Time</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <!-- Hidden fields for time deposit a like -->
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  @if(isTimed()){
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Maturity Date</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  } @if(withGoalAmount()){
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Goal Amount</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  }
+  <div class="row">
+    <mat-form-field>
+      <mat-label>User</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>

@@ -14,6 +14,7 @@ export const deposit: Deposit = {
   balance: 12500,
   interestEarned: 500,
   lastTransaction: new Date('2024-12-05'),
+  isTimed: false,
 };
 
 export const deposits: Deposit[] = [
@@ -26,6 +27,7 @@ export const deposits: Deposit[] = [
     balance: 12500,
     interestEarned: 500,
     lastTransaction: new Date('2024-12-05'),
+    isTimed: false,
   },
   {
     id: 'dep_002',
@@ -36,6 +38,7 @@ export const deposits: Deposit[] = [
     balance: 10000,
     interestEarned: 0,
     lastTransaction: new Date('2024-12-05'),
+    isTimed: false,
   },
   {
     id: 'dep_003',
@@ -46,6 +49,7 @@ export const deposits: Deposit[] = [
     balance: 20000,
     interestEarned: 0,
     lastTransaction: new Date('2024-12-05'),
+    isTimed: false,
   },
 ];
 
