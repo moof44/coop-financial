@@ -70,6 +70,11 @@ export class SidenavComponent implements OnInit, OnDestroy{
       link: '/collection',
       icon: 'home' // Add icon property
     },
+    {
+      label: 'Earnings',
+      link: '/earnings',
+      icon: 'home' // Add icon property
+    },
   ]
 
   constructor(){

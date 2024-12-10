@@ -193,4 +193,30 @@ export const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'earnings',
+    loadComponent: ()=> import('./features/earnings/earnings.component').then(
+      (m) => m.EarningsComponent
+    ),
+    children:[
+      {
+        path: '',
+        loadComponent: ()=> import('./features/earnings/pages/list-earnings/list-earnings.component').then(
+          (m) => m.ListEarningsComponent
+        ),
+      },
+      {
+        path: 'form/:id',
+        loadComponent: ()=> import('./features/earnings/pages/form-earnings/form-earnings.component').then(
+          (m) => m.FormEarningsComponent
+        ),
+      },
+      {
+        path: 'form',
+        loadComponent: ()=> import('./features/earnings/pages/form-earnings/form-earnings.component').then(
+          (m) => m.FormEarningsComponent
+        ),
+      },
+    ]
+  },
 ];
