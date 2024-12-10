@@ -7,6 +7,10 @@ export interface Deposit{
     balance: number,
     interestEarned: number,
     lastTransaction: string|Date,
+    isTimed:boolean,
+    dateMaturity?: string | Date,
+    withGoalAmount?:boolean,
+    goalAmount?: number,
 }
 
 

@@ -45,10 +45,11 @@ export class ListLoanComponent implements OnInit {
   }
 
   enrollLoan(){
-    const dialogRef = this.dialog.open(EnrollLoanDialogComponent);
-    dialogRef.afterClosed().subscribe(res=>{
-      console.log(`Dialog result: ${res}`)
-    })
+    // const dialogRef = this.dialog.open(EnrollLoanDialogComponent);
+    // dialogRef.afterClosed().subscribe(res=>{
+    //   console.log(`Dialog result: ${res}`)
+    // })
+    this.#router.navigateByUrl(`/loan/enroll`);
   }
 
 }

@@ -112,7 +112,13 @@ export const routes: Routes = [
         loadComponent: ()=> import('./features/loan/pages/list-loan/list-loan.component').then(
           (m) => m.ListLoanComponent
         ),
-      }
+      },
+      {
+        path: 'enroll',
+        loadComponent: ()=> import('./features/loan/pages/enroll-loan/enroll-loan.component').then(
+          (m) => m.EnrollLoanComponent
+        ),
+      },
     ]
   },
   {
@@ -215,6 +221,26 @@ export const routes: Routes = [
         path: 'form',
         loadComponent: ()=> import('./features/earnings/pages/form-earnings/form-earnings.component').then(
           (m) => m.FormEarningsComponent
+        ),
+      },
+    ]
+  },
+  {
+    path:'admin',
+    loadComponent: ()=> import('./features/admin/admin.component').then(
+      (m) => m.AdminComponent
+    ),
+    children: [
+      {
+        path: '',
+        loadComponent: ()=> import('./features/admin/pages/home/home.component').then(
+          (m) => m.HomeComponent
+        ),
+      },
+      {
+        path: 'loan-settings',
+        loadComponent: ()=> import('./features/admin/pages/loan-settings/loan-settings.component').then(
+          (m) => m.LoanSettingsComponent
         ),
       },
     ]
